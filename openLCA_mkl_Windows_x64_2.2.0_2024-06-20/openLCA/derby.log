@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+Tue Jul 23 10:17:28 PDT 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0190-e099-1a84-000005bbd7a8 
+on database directory C:\Users\shado\openLCA-data-1.4\databases\agribalyse_v301_27052021 with class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader@3148f668[olca-app:2.2.0(id=6)] 
+Loaded from file:/C:/Users/shado/OneDrive/Documents/ENGR544/openLCA_mkl_Windows_x64_2.2.0_2024-06-20/openLCA/plugins/olca-app_2.2.0/libs/derby-10.16.1.1.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.5+8
+user.dir=C:\Users\shado\OneDrive\Documents\ENGR544\openLCA_mkl_Windows_x64_2.2.0_2024-06-20\openLCA
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Jul 23 11:43:37 PDT 2024:
+Shutting down instance a816c00e-0190-e099-1a84-000005bbd7a8 on database directory C:\Users\shado\openLCA-data-1.4\databases\agribalyse_v301_27052021 with class loader org.eclipse.osgi.internal.loader.EquinoxClassLoader@3148f668[olca-app:2.2.0(id=6)] 

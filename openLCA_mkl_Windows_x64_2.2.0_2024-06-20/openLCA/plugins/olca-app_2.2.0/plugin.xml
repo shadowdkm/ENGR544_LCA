@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.editors">
+
+		<editor
+				class="org.openlca.app.editors.StartPage"
+				default="false"
+				id="olca.StartPage"
+				name="%Welcome">
+		</editor>
+
+		<editor
+				class="org.openlca.app.editors.CommentsEditor"
+				default="false"
+				id="CommentsEditor"
+				name="%Comments">
+		</editor>
+
+		<editor
+				class="org.openlca.app.wizards.io.ImportLogView"
+				default="false"
+				id="ImportLogView"
+				name="Import details">
+		</editor>
+
+		<!-- developer tools -->
+		<editor
+				class="org.openlca.app.devtools.sql.SqlEditor"
+				contributorClass="org.openlca.app.devtools.Toolbar"
+				default="false"
+				id="SqlEditor"
+				name="SQL">
+		</editor>
+		<editor
+				class="org.openlca.app.devtools.python.PythonEditor"
+				default="false"
+				id="PythonEditor"
+				name="Python"
+				contributorClass="org.openlca.app.devtools.Toolbar">
+		</editor>
+
+		<!-- model editors -->
+		<editor
+				class="org.openlca.app.editors.actors.ActorEditor"
+				default="false"
+				id="editors.actor"
+				name="%ActorEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.sources.SourceEditor"
+				default="false"
+				id="editors.source"
+				name="%SourceEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.units.UnitGroupEditor"
+				default="false"
+				id="editors.unitgroup"
+				name="%UnitGroupEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.flow_properties.FlowPropertyEditor"
+				default="false"
+				id="editors.flowproperty"
+				name="%FlowPropertyEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.flows.FlowEditor"
+				default="false"
+				id="editors.flow"
+				name="%FlowEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.lcia.ImpactMethodEditor"
+				default="false"
+				id="editors.impactmethod"
+				name="%ImpactMethodEditor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.lcia.ImpactCategoryEditor"
+				default="false"
+				id="editors.impactcategory"
+				name="Environmental indicator">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.processes.ProcessEditor"
+				default="false"
+				id="editors.process"
+				name="%ProcessEditor"
+				contributorClass="org.openlca.app.editors.processes.ProcessToolbar">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.projects.ProjectEditor"
+				default="false"
+				id="editors.project"
+				name="%ProjectEditor"
+				contributorClass="org.openlca.app.editors.projects.ProjectEditorToolBar">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.systems.ProductSystemEditor"
+				default="false"
+				id="editors.productsystem"
+				name="%ProductSystemEditor"
+				contributorClass="org.openlca.app.editors.systems.ProductSystemToolBar">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.social.SocialIndicatorEditor"
+				default="false"
+				id="editors.socialindicator"
+				name="Social indicator">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.currencies.CurrencyEditor"
+				default="false"
+				id="editors.currency"
+				name="Currency">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.dq_systems.DQSystemEditor"
+				default="false"
+				id="editors.dqsystem"
+				name="Data quality system">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.results.ResultEditor"
+				default="false"
+				id="editors.result"
+				name="Result">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.locations.LocationEditor"
+				default="false"
+				id="editors.location"
+				name="Location editor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.parameters.GlobalParameterEditor"
+				default="false"
+				id="editors.parameter"
+				name="Global parameter editor">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.epds.EpdEditor"
+				default="false"
+				id="editors.epd"
+				name="EPD">
+		</editor>
+
+		<!-- result views -->
+		<editor
+				class="org.openlca.app.results.ResultEditor"
+				contributorClass="org.openlca.app.results.ResultsBarContributor"
+				default="false"
+				id="editors.analyze"
+				name="Analyze viewer">
+		</editor>
+		<editor
+				class="org.openlca.app.results.simulation.SimulationEditor"
+				default="false"
+				id="SimulationEditor"
+				name="Simulation Editor">
+		</editor>
+		<editor
+				id="ProjectResultEditor"
+				class="org.openlca.app.editors.projects.results.ProjectResultEditor"
+				contributorClass="org.openlca.app.editors.projects.results.ReportResultToolbar"
+				name="Project results">
+		</editor>
+		<editor
+				id="editors.LogFileEditor"
+				class="org.openlca.app.logging.LogFileEditor"
+				name="Log file">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.graphical.GraphEditor"
+				default="false"
+				id="editors.graphical"
+				name="Graphical editor">
+		</editor>
+		<editor
+				id="SearchPage"
+				class="org.openlca.app.search.SearchPage"
+				default="false"
+				name="%SearchResults">
+		</editor>
+		<editor
+				id="SearchView"
+				class="org.openlca.app.collaboration.search.SearchView"
+				default="false"
+				name="CS Search results">
+		</editor>
+		<editor
+				id="ParameterUsagePage"
+				class="org.openlca.app.search.ParameterUsagePage"
+				default="false"
+				name="Parameter usage">
+		</editor>
+		<editor
+				class="org.openlca.app.editors.parameters.bigtable.BigParameterTable"
+				default="false"
+				id="BigParameterTable"
+				name="Parameters">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.tables.FlowTable"
+				default="false"
+				id="DbFlowTable"
+				name="Flows">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.tables.FlowPropertyTable"
+				default="false"
+				id="DbFlowPropertyTable"
+				name="Flow properties">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.tables.CurrencyTable"
+				default="false"
+				id="DbCurrencyTable"
+				name="Currencies">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.tables.UnitTable"
+				default="false"
+				id="DbUnitTable"
+				name="Units">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.tables.ProcessTable"
+				default="false"
+				id="DbProcessTable"
+				name="Processes">
+		</editor>
+
+		<editor
+				class="org.openlca.app.db.LinkingPropertiesPage"
+				default="false"
+				id="editors.LinkingPropertiesPage"
+				name="Linking properties">
+		</editor>
+
+		<editor
+				class="org.openlca.app.tools.mapping.MappingTool"
+				default="false"
+				id="MappingTool"
+				name="Flow mapping"
+				contributorClass="org.openlca.app.tools.mapping.MappingMenu">
+		</editor>
+
+		<editor
+				class="org.openlca.app.tools.openepd.EpdPanel"
+				default="false"
+				id="EpdPanel"
+				name="openEPD">
+		</editor>
+
+		<editor
+				class="org.openlca.app.editors.libraries.LibraryEditor"
+				default="false"
+				id="editors.LibraryEditor"
+				name="Library">
+		</editor>
+
+		<editor
+				class="org.openlca.app.tools.ValidationResultView"
+				default="false"
+				id="ValidationResultView"
+				name="Validation result">
+		</editor>
+
+		<editor
+				class="org.openlca.app.tools.soda.SodaClientTool"
+				default="false"
+				id="SodaClientTool"
+				name="soda4LCA">
+		</editor>
+
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.newWizards">
+		<wizard
+				class="org.openlca.app.wizards.ActorWizard"
+				id="wizards.new.actor"
+				name="%Actors">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.SourceWizard"
+				id="wizards.new.source"
+				name="%Sources">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.LocationWizard"
+				id="wizards.new.location"
+				name="Locations wizard">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ParameterWizard"
+				id="wizards.new.parameter"
+				name="Global parameters wizard">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.UnitGroupWizard"
+				id="wizards.new.unitgroup"
+				name="%UnitGroups">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.FlowPropertyWizard"
+				id="wizards.new.flowproperty"
+				name="%FlowProperties">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.FlowWizard"
+				id="wizards.new.flow"
+				name="%Flows">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ImpactMethodWizard"
+				id="wizards.new.impactmethod"
+				name="%LCIAMethods">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ImpactCategoryWizard"
+				id="wizards.new.impactcategory"
+				name="Environmental indicators">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ProcessWizard"
+				id="wizards.new.process"
+				name="%Processes">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ProjectWizard"
+				id="wizards.new.project"
+				name="%Projects">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ProductSystemWizard"
+				id="wizards.new.productsystem"
+				name="%ProductSystems">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.SocialIndicatorWizard"
+				id="wizards.new.socialindicator"
+				name="Social indicator">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.CurrencyWizard"
+				id="wizards.new.currency"
+				name="Currency">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.DQSystemWizard"
+				id="wizards.new.dqsystem"
+				name="%DQSystems">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.ResultWizard"
+				id="wizards.new.result"
+				name="Results"/>
+		<wizard
+				class="org.openlca.app.wizards.EpdWizard"
+				id="wizards.new.epd"
+				name="EPDs"/>
+	</extension>
+
+	<extension
+			id="org.openlca.app.Application"
+			name="openLCA"
+			point="org.eclipse.core.runtime.applications">
+		<application>
+			<run
+					class="org.openlca.app.rcp.RcpApplication">
+			</run>
+		</application>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.perspectives">
+		<perspective
+				name="%Perspective"
+				class="org.openlca.app.rcp.RcpPerspective"
+				id="perspectives.standard">
+		</perspective>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.views">
+		<view
+				allowMultiple="false"
+				class="org.openlca.app.navigation.Navigator"
+				icon="icons/immutable/navigator.png"
+				id="views.navigation"
+				name="%Navigation">
+		</view>
+		<view
+				class="org.openlca.app.collaboration.views.HistoryView"
+				id="views.collaboration.history"
+				name="Commit history"
+				restorable="true">
+		</view>
+		<view
+				class="org.openlca.app.collaboration.views.CompareView"
+				id="views.collaboration.compare"
+				name="Compare with repository"
+				restorable="true">
+		</view>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.preferencePages">
+		<page
+				class="org.openlca.app.logging.LoggerConfigPage"
+				id="preferencepages.logging"
+				name="%Logging">
+		</page>
+		<page
+				class="org.openlca.app.preferences.NumberFormatPage"
+				id="preferencepages.numberformat"
+				name="%NumberFormat">
+		</page>
+		<page
+				class="org.openlca.app.preferences.FeatureFlagPage"
+				id="preferencepages.featureflag"
+				name="Experimental features">
+		</page>
+		<page
+				class="org.openlca.app.preferences.IoPreferencePage"
+				id="org.openlca.io.IoPreferencePage"
+				name="%ImportExport">
+		</page>
+		<page
+				id="preferencepages.config"
+				class="org.openlca.app.preferences.ConfigPage"
+				name="%Configuration">
+		</page>
+		<page
+				class="org.openlca.app.collaboration.preferences.CollaborationPreferencePage"
+				id="preferencepages.collaboration"
+				name="Collaboration">
+		</page>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.menus">
+		<menuContribution
+				locationURI="toolbar:org.eclipse.ui.trim.command2">
+			<toolbar
+					id="olca-app.search.toolbar">
+				<control
+						class="org.openlca.app.search.SearchText"
+						id="org.openlca.app.SearchText">
+				</control>
+			</toolbar>
+		</menuContribution>
+	</extension>
+
+	<extension
+			id="openLCA"
+			point="org.eclipse.core.runtime.products">
+		<product
+				application="org.openlca.app.Application"
+				name="openLCA">
+			<property
+					name="windowImages"
+					value="icons/logo/16_32bit.png,icons/logo/32_32bit.png,icons/logo/48_32bit.png,icons/logo/64.png,icons/logo/128.png">
+			</property>
+			<property
+         name="aboutText"
+         value="openLCA 2.2.0&#x0A;&#x0A;Copyright (c) 2007 - 2024 GreenDelta. All rights reserved.&#x0A;Visit http://openlca.org and http://greendelta.com&#x0A;&#x0A;This product includes software developed in the openLCA&#x0A;project and other open source software.">
+			</property>
+			<property
+					name="aboutImage"
+					value="icons/logo/about.png">
+			</property>
+			<property
+					name="appName"
+					value="openLCA">
+			</property>
+			<property
+					name="introBrandingImage"
+					value="product:icons/logo/glowing.png"/>
+			<property
+					name="introBrandingImageText"
+					value="openLCA"/>
+			<property
+					name="startupProgressRect"
+					value="0,442,602,5">
+			</property>
+			<property
+					name="startupForegroundColor"
+					value="000000">
+			</property>
+			<property
+					name="startupMessageRect"
+					value="7,525,445,20">
+			</property>
+		</product>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.navigator.viewer">
+		<viewer
+				viewerId="views.navigation">
+			<options>
+				<property
+						name="org.eclipse.ui.navigator.hideCollapseAllAction"
+						value="true">
+				</property>
+				<property
+						name="org.eclipse.ui.navigator.hideAvailableCustomizationsDialog"
+						value="true">
+				</property>
+			</options>
+		</viewer>
+		<viewerContentBinding
+				viewerId="views.navigation">
+			<includes>
+				<contentExtension
+						isRoot="true"
+						pattern="navigatorcontent.context">
+				</contentExtension>
+				<contentExtension
+						pattern="viewer.filter.emptycategory">
+				</contentExtension>
+				<contentExtension
+						pattern="viewer.filter.productflow">
+				</contentExtension>
+				<contentExtension
+						pattern="viewer.filter.elementaryflow">
+				</contentExtension>
+				<contentExtension
+						pattern="viewer.filter.wasteflow">
+				</contentExtension>
+				<contentExtension
+						pattern="navigator.linkHelper">
+				</contentExtension>
+			</includes>
+		</viewerContentBinding>
+		<viewerActionBinding
+				viewerId="views.navigation">
+			<includes>
+				<actionExtension
+						pattern="actionprovider.navigation">
+				</actionExtension>
+			</includes>
+		</viewerActionBinding>
+		<dragAssistant
+				class="org.openlca.app.navigation.NavigationDragAssistant"
+				viewerId="views.navigation">
+		</dragAssistant>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent
+				activeByDefault="true"
+				contentProvider="org.openlca.app.navigation.NavigationContentProvider"
+				id="navigatorcontent.context"
+				labelProvider="org.openlca.app.navigation.NavigationLabelProvider"
+				name="%DataProvider"
+				priority="normal">
+			<triggerPoints>
+				<instanceof
+						value="org.openlca.app.navigation.elements.INavigationElement">
+				</instanceof>
+			</triggerPoints>
+			<commonSorter
+					class="org.openlca.app.navigation.NavigationComparator">
+			</commonSorter>
+			<dropAssistant
+					class="org.openlca.app.navigation.NavigationDropAssistant"
+					id="dropassistant.navigation">
+				<possibleDropTargets>
+					<instanceof
+							value="org.openlca.app.navigation.elements.INavigationElement">
+					</instanceof>
+				</possibleDropTargets>
+			</dropAssistant>
+			<possibleChildren>
+				<instanceof
+						value="org.openlca.app.navigation.elements.INavigationElement">
+				</instanceof>
+			</possibleChildren>
+		</navigatorContent>
+		<actionProvider
+				class="org.openlca.app.navigation.actions.NavigationMenu"
+				id="actionprovider.navigation"
+				priority="normal">
+			<enablement/>
+		</actionProvider>
+		<commonFilter
+				activeByDefault="false"
+				class="org.openlca.app.navigation.filters.EmptyCategoryFilter"
+				id="viewer.filter.emptycategory"
+				name="%EmptyCategories">
+		</commonFilter>
+		<commonFilter
+				activeByDefault="false"
+				class="org.openlca.app.navigation.filters.ProductFlowFilter"
+				id="viewer.filter.productflow"
+				name="%ProductFlows">
+		</commonFilter>
+		<commonFilter
+				activeByDefault="false"
+				class="org.openlca.app.navigation.filters.ElementaryFlowFilter"
+				id="viewer.filter.elementaryflow"
+				name="%ElementaryFlows">
+		</commonFilter>
+		<commonFilter
+				activeByDefault="false"
+				class="org.openlca.app.navigation.filters.WasteFlowFilter"
+				id="viewer.filter.wasteflow"
+				name="%WasteFlows">
+		</commonFilter>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.navigator.linkHelper">
+		<linkHelper
+				class="org.openlca.app.navigation.NavigationLinkHelper"
+				id="navigator.linkHelper">
+			<selectionEnablement>
+				<instanceof value="org.openlca.app.navigation.elements.ModelElement"/>
+			</selectionEnablement>
+			<editorInputEnablement>
+				<instanceof value="org.openlca.app.editors.ModelEditorInput"/>
+			</editorInputEnablement>
+		</linkHelper>
+	</extension>
+
+	<extension
+			point="org.eclipse.core.runtime.preferences">
+		<initializer
+				class="org.openlca.app.logging.LoggerPreference">
+		</initializer>
+		<initializer
+				class="org.openlca.app.preferences.Preferences">
+		</initializer>
+		<initializer
+				class="org.openlca.app.preferences.IoPreference">
+		</initializer>
+		<initializer
+				class="org.openlca.app.collaboration.preferences.CollaborationPreference">
+		</initializer>
+	</extension>
+
+	<extension
+			point="org.eclipse.ui.importWizards">
+		<category
+				id="import.category.file"
+				name="File Import">
+		</category>
+		<category
+				id="import.category.ilcdnetwork"
+				name="%ILCDNetworkImport">
+		</category>
+		<wizard
+				category="import.category.file"
+				class="org.openlca.app.wizards.io.EcoSpold01ImportWizard"
+				icon="icons/immutable/xml_es1.png"
+				id="wizard.import.ecospold1"
+				name="%EcoSpold">
+		</wizard>
+		<wizard
+				category="import.category.file"
+				class="org.openlca.app.wizards.io.HSCSimImportWizard"
+				icon="icons/immutable/javascript.png"
+				id="wizard.import.hsc"
+				name="HSC Sim Flow Sheet"/>
+		<!--
+		<wizard
+					category="import.category.file"
+					class="org.openlca.app.wizards.io.EcoSpold2ImportWizard"
+					icon="icons/immutable/xml_es2.png"
+					id="wizard.import.ecospold2"
+					name="EcoSpold 2">
+			 <description>
+					Import EcoSpold 2 files
+			 </description>
+		</wizard>
+		-->
+		<wizard
+				category="import.category.file"
+				class="org.openlca.app.wizards.io.ILCDImportWizard"
+				icon="icons/immutable/ilcd.png"
+				id="wizard.import.ilcd"
+				name="ILCD">
+		</wizard>
+		<wizard
+				category="import.category.file"
+				class="org.openlca.app.wizards.io.ExcelImportWizard"
+				icon="icons/immutable/excel.png"
+				id="wizard.import.excel"
+				name="Excel">
+		</wizard>
+		<wizard
+				category="import.category.ilcdnetwork"
+				class="org.openlca.app.ilcd_network.ImportWizard"
+				icon="icons/immutable/network.png"
+				id="wizard.import.ilcdnetwork"
+				name="%ILCDNetworkImport">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.io.DbImportWizard"
+				icon="icons/logo/16_32bit.png"
+				id="wizard.import.db"
+				name="%ImportEntireDatabase">
+			<description>%ImportEntireDatabase_Info</description>
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.io.JsonImportWizard"
+				icon="icons/logo/16_32bit.png"
+				id="wizard.import.json"
+				name="Linked Data (JSON-LD)">
+		</wizard>
+		<wizard category="import.category.file"
+						class="org.openlca.app.wizards.io.SimaProCsvImportWizard"
+						icon="icons/immutable/simapro.png"
+						id="wizard.import.simapro.csv"
+						name="SimaPro CSV">
+		</wizard>
+		<wizard
+				class="org.openlca.app.wizards.io.GeoJsonImportWizard"
+				icon="icons/immutable/location.png"
+				id="wizard.import.geojson"
+				name="Geometries from GeoJSON">
+		</wizard>
+	</extension>
+
+	<!-- export wizards -->
+
+	<extension
+			point="org.eclipse.ui.exportWizards">
+		<category
+				id="export.category.ecospold"
+				name="EcoSpold">
+		</category>
+		<category
+				id="export.category.excel"
+				name="Excel">
+		</category>
+		<category
+				id="export.category.ilcd"
+				name="ILCD">
+		</category>
+		<category
+				id="openlca.export.category"
+				name="openLCA">
+		</category>
+		<category
+				id="export.category.simapro"
+				name="SimaPro CSV">
+		</category>
+		<wizard
+				category="export.category.ecospold"
+				class="org.openlca.app.wizards.io.EcoSpold01ExportProcessWizard"
+				icon="icons/immutable/xml_es1.png"
+				id="wizard.export.ecospold.process"
+				name="%Processes">
+		</wizard>
+		<wizard
+				category="export.category.excel"
+				class="org.openlca.app.wizards.io.ExcelExportWizard"
+				icon="icons/immutable/excel.png"
+				id="wizard.export.excel.process"
+				name="%Processes">
+		</wizard>
+		<!--
+		<wizard
+				 category="export.category.ecospold"
+				 class="org.openlca.app.wizards.io.EcoSpold2ExportWizard"
+				 icon="icons/immutable/xml_es2.png"
+				 id="wizard.export.ecospold.process"
+				 name="EcoSpold 2">
+			<description>
+				 Export processes as EcoSpold 2 activity data sets
+			</description>
+	 </wizard>
+	 -->
+		<wizard
+				category="export.category.ecospold"
+				class="org.openlca.app.wizards.io.EcoSpold01ExportMethodWizard"
+				icon="icons/immutable/xml_es1.png"
+				id="wizard.export.ecospold.impactmethod"
+				name="%ImpactMethods">
+		</wizard>
+		<wizard
+				category="export.category.ilcd"
+				class="org.openlca.app.wizards.io.ILCDExportWizard"
+				icon="icons/immutable/ilcd.png"
+				id="wizard.export.source"
+				name="ILCD Zip-File">
+		</wizard>
+		<wizard
+				category="export.category.ilcd"
+				class="org.openlca.app.ilcd_network.ExportWizard"
+				icon="icons/immutable/network.png"
+				id="org.openlca.ilcd.network.ExportWizard"
+				name="%ILCDNetworkExport">
+		</wizard>
+		<wizard
+				category="openlca.export.category"
+				class="org.openlca.app.wizards.io.JsonExportWizard"
+				icon="icons/logo/16_32bit.png"
+				id="org.openlca.app.wizards.io.JsonExportWizard"
+				name="JSON-LD">
+		</wizard>
+
+		<wizard
+				category="export.category.simapro"
+				id="org.openlca.app.wizards.io.SimaProCsvExportWizard"
+				class="org.openlca.app.wizards.io.SimaProProcessExportWizard"
+				name="Processes to SimaPro CSV"
+				icon="icons/immutable/simapro.png">
+			<description>
+				Export processes to a SimaPro CSV file
+			</description>
+		</wizard>
+
+		<wizard
+				category="export.category.simapro"
+				id="org.openlca.app.wizards.io.SimaProMethodExportWizard"
+				class="org.openlca.app.wizards.io.SimaProMethodExportWizard"
+				name="LCIA methods to SimaPro CSV"
+				icon="icons/immutable/simapro.png">
+			<description>
+				Export LCIA methods to a SimaPro CSV file
+			</description>
+		</wizard>
+
+		<wizard
+				category="export.category.excel"
+				id="org.openlca.app.wizards.io.OneClickExportWizard"
+				class="org.openlca.app.wizards.io.OneClickExportWizard"
+				name="One Click LCA - Excel template"
+				icon="icons/immutable/oneclick16.png">
+			<description>
+				Exports processes into the One Click LCA Excel template
+			</description>
+		</wizard>
+	</extension>
+
+	<extension
+			point="org.eclipse.e4.ui.css.swt.theme">
+		<stylesheet
+				uri="css/e4_dark_fixes.css">
+			<themeid
+					refid="org.eclipse.e4.ui.css.theme.e4_dark">
+			</themeid>
+		</stylesheet>
+	</extension>
+
+</plugin>
