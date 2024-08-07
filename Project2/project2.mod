@@ -20,10 +20,10 @@ float CS[S][W]=[[6500,6500],[8000,8000]];
 float P[S][W]=[[35,10],[30,7]]; 
 
 //maximum capacity of factory, 210 Lougheed Road (U), 1465 Ellis Street (D), 1505 Hardy Street(M)
-float CF[F][W]=[[22*8*2*10, 22*8*4*10],[22*8*2*1, 22*8*4*1],[22*8*2*5, 22*8*4*5]];  
+float CF[F][W]=[[22*8*2*10, 22*8*4*10],[22*8*2*4, 22*8*4*4],[22*8*2*6, 22*8*4*6]];  
 
 //cost of agreement (i.e., fixed-cost) with factory location, 1 year rate+fixed equipments
-float AF[F]=[42000+5000, 1150+5000, 19760+5000];
+float AF[F]=[42000+5000, 20500+5000, 19760+5000];
 
 //maximum capacity of distributors 1650 Springfield Road (HH),470 Highway #33 West (HH),2515 Enterprise Way (HD),2514 BC-97 (ASHLEY),1264 Ellis St (LH)
 float CD[D][W]=[[300,500], [300,500],[300,500],[300,500],[300,500]];
@@ -63,7 +63,7 @@ float Lrf[R][F]=[[27.4,16.9,20.2],
 				[8.5,3.7,1.3],
 				[7,4.3,0.65]];//transportation distance between locations r and f
 //transportation of Euro 5 32-ton truck		
-float O1=8; 	//$7.0875(fuel)+$0.567(driver)+$0.135(maintenance)+$0.0675(insurance and taxes)+$0.135(tolls)=$7.992CAD
+float O1=8/200; 	//$7.0875(fuel)+$0.567(driver)+$0.135(maintenance)+$0.0675(insurance and taxes)+$0.135(tolls)=$7.992CAD
 float T1=200; 	//200 capacity
 float E1=0.9;
 //transportation of Ford F150, pickup truck
@@ -77,7 +77,7 @@ float Return[M][W]=[[200,200],[150,150],[150,200],[200,50]]; //return of market 
 
 float alpha=0.3;//recovery rate
 float We1=0.8;//weight of total cost
-float We2=0.2;////weight of carbon emissions
+dvar float+ We2;////weight of carbon emissions
 
 dvar float+ Z1;//total cost
 dvar float+ Z2;//carbon emissions
@@ -98,12 +98,12 @@ dvar boolean BR[R];//1, if the recycle center is selected
 minimize (We1* (Z1))+(We2* (Z2));
 subject to {
 Z1==sum(s in S)(AS[s]*BS[s])+sum(f in F)(AF[f]*BF[f])+sum(d in D)(AD[d]*BD[d])+sum(r in R)(AR[r]*BR[r])+
-		sum(s in S, f in F, w in W)(O1*Lsf[s][f]/T1*Usfw[s][f][w]+P[s][w]*Usfw[s][f][w])+
-		sum(f in F, d in D, w in W)(O1*Lfd[f][d]/T1*Wfdw[f][d][w])+
-		sum(d in D, m in M, w in W)(O2*Ldm[d][m]/T2*Ydmw[d][m][w])+
-		sum(m in M, r in R, w in W)(O2*Lmr[m][r]/T2*Xmrw[m][r][w]+N[r][w]*Xmrw[m][r][w])+
-		sum(r in R, f in F, w in W)(O1*Lrf[r][f]/T1*Vrfw[r][f][w]-K[w]*Vrfw[r][f][w])+
-		sum(r in R, w in W)(O1*Lr[r]/T1*Zrw[r][w]+Q[w]*Zrw[r][w]);
+		sum(s in S, f in F, w in W)(O1*Lsf[s][f]*Usfw[s][f][w]+P[s][w]*Usfw[s][f][w])+
+		sum(f in F, d in D, w in W)(O1*Lfd[f][d]*Wfdw[f][d][w])+
+		sum(d in D, m in M, w in W)(O2*Ldm[d][m]*Ydmw[d][m][w])+
+		sum(m in M, r in R, w in W)(O2*Lmr[m][r]*Xmrw[m][r][w]+N[r][w]*Xmrw[m][r][w])+
+		sum(r in R, f in F, w in W)(O1*Lrf[r][f]*Vrfw[r][f][w]-K[w]*Vrfw[r][f][w])+
+		sum(r in R, w in W)(O1*Lr[r]*Zrw[r][w]+Q[w]*Zrw[r][w]);
 		
 Z2==sum(s in S, f in F, w in W)(E1*Lsf[s][f]/T1*Usfw[s][f][w])+
 		sum(f in F, d in D, w in W)(E1*Lfd[f][d]/T1*Wfdw[f][d][w])+
@@ -125,5 +125,13 @@ forall (f in F, w in W) {sum (d in D)Wfdw[f][d][w]<=CF[f][w]*BF[f];}
 forall (d in D, w in W) {sum (m in M)Ydmw[d][m][w]<=CD[d][w]*BD[d];}
 forall (r in R, w in W) {sum (m in M)Xmrw[m][r][w]<=CR[r][w]*BR[r];}
 
+We1+We2==1;
+BF[2]==1;
 sum(f in F)(BF[f])==1;
 } 
+
+execute {
+  writeln("Solution:");
+  writeln("z1 = ", Z1);
+  writeln("z2 = ", Z2);
+}
